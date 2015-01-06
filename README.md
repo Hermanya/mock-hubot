@@ -4,6 +4,8 @@ This is a simple wrapper library around [hubot-mock-adapter](https://github.com/
 
 ###How to use
 
+ [Assume we were to test this script.](test/hello-script.coffee)
+
 ```
 describe 'test', ->
 
