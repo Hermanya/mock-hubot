@@ -5,7 +5,7 @@
   "name": "mock-hubot",
   "version": "1.0.1",
   "description": "Hubot mock library made dead simple",
-  "main": "humock.js",
+  "main": "humock.coffee",
   "directories": {
     "test": "test"
   },
