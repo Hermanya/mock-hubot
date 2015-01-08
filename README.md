@@ -3,15 +3,19 @@ Mock-hubot
 This is a simple wrapper library around [hubot-mock-adapter](https://github.com/blalor/hubot-mock-adapter).
 
 ###How to use
+`$ npm install --save-dev mock-hubot`
 
  [Assume we were to test this script.](test/hello-script.coffee)
 
 ```
+humock = require 'mock-hubot'
+helloScript = require './hello-script.coffee'
+
 describe 'test', ->
 
     beforeEach (done) ->
       humock.start ->
-        humock.learn require './hello-script.coffee'
+        humock.learn helloScript
         done()
 
     afterEach (done) ->
