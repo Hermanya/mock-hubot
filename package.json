@@ -3,7 +3,7 @@
     "test": "grunt test"
   },
   "name": "mock-hubot",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Hubot mock library made dead simple",
   "main": "humock.coffee",
   "directories": {
