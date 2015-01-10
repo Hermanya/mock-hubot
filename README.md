@@ -10,6 +10,7 @@ This is a simple wrapper library around [hubot-mock-adapter](https://github.com/
 ```
 humock = require 'mock-hubot'
 helloScript = require './hello-script.coffee'
+{expect} = require 'chai'
 
 describe 'test', ->
 
