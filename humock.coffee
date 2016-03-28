@@ -21,6 +21,7 @@ addScriptsWhichAreBeingTested = (scripts) ->
 
 testWithCallback = (message, callback) ->
   adapter.on 'send', callback
+  adapter.on 'reply', callback
   adapter.receive new TextMessage(user, message)
 
 testWithPromise = (message) ->
