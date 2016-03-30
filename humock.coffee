@@ -20,19 +20,19 @@ addScriptsWhichAreBeingTested = (scripts) ->
     addScript scripts
 
 testWithCallback = (message, callback) ->
-  adapter.on 'send', callback
-  adapter.on 'reply', callback
+  [ 'send', 'reply' ].forEach (event) ->
+    adapter.on event, callback
   adapter.receive new TextMessage(user, message)
+
 
 testWithPromise = (message) ->
   Q.Promise (resolve) ->
-    adapter.on 'send', (envelope, strings) ->
+    testWithCallback message, (envelope, strings) ->
       resolve {
         envelope,
         strings,
         toString: -> strings[0]
       }
-    adapter.receive new TextMessage(user, message)
 
 module.exports =
   getUser: -> user

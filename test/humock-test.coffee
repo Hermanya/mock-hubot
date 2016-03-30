@@ -44,14 +44,24 @@ describe 'humock', ->
     afterEach (done) ->
       humock.shutdown -> done()
 
-    it 'provides callback-based way of testing', (done) ->
+    it 'provides callback-based way of testing send', (done) ->
       humock.test 'hello', (envelope, strings) ->
         expect(strings[0]).match /hello back/
         done()
 
-    it 'provides promise-based way of testing', (done) ->
+    it 'provides promise-based way of testing send', (done) ->
       humock.test('hello').then (response) ->
         expect(response.toString()).match /hello back/
+        done()
+
+    it 'provides callback-based way of testing reply', (done) ->
+      humock.test 'hubot: foo', (envelope, strings) ->
+        expect(strings[0]).match /bar/
+        done()
+
+    it 'provides promise-based way of testing reply', (done) ->
+      humock.test('hubot: foo').then (response) ->
+        expect(response.toString()).match /bar/
         done()
 
   describe 'shutdown', ->
