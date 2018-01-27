@@ -1,5 +1,7 @@
 Mock-hubot
 ==========
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/Hermanya/mock-hubot.svg)](https://greenkeeper.io/)
 This is a simple wrapper library around [hubot-mock-adapter](https://github.com/blalor/hubot-mock-adapter).
 
 ###How to use
